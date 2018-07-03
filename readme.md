@@ -3,7 +3,7 @@
 Para la siguiente actividad clona este repositorio y trabaja en cada una de las carpetas respectivas.
 Cada ejercicio viene con su archivo, el cual contiene información relevante para poder realizar el ejercicio.
 
-## Competenecias importantes de esta actividad
+## Competencias importantes de esta actividad
 
 - Agregar jQuery a una página web
 - Conocer la importancia del orden de carga
