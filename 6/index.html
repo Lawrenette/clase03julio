@@ -1,5 +1,4 @@
 <!--
-
 En este ejercicio aprenderemos a utilizar un nuevo evento y será el click derecho.
 Como sabrán, el click derecho o también llamado secundario es un evento gatillado por
 el usuario (así como el click) y su función en el caso de las páginas web de mostrar el
@@ -16,17 +15,61 @@ mostrar el menú contextual. Sin embargo para lograr prevenir ese comportamiento
 función que gatille todo el comportamiento debe recibir como parámetro el evento que
 lo gatilla y así se prevenga solo ese evento y no todos los eventos.
 Para la solución puedes inspirarte en: https://codepen.io/gabrieleromanato/pen/BdjBWd
-
 -->
 
 
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  </body>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<style>
+	#gallery {
+		margin: 2em auto;
+		max-width: 38%;
+		display: flex;
+	}
+
+	#gallery figure {
+		margin: 0 1.5%;
+		width: 30.33333%;
+	}
+
+	#gallery img {
+		max-width: 100%;
+		height: auto;
+		display: block;
+		cursor: pointer;
+	}
+
+	#gallery figcaption {
+		margin: 1em 0;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+
+	<div id="gallery">
+		<figure><img src="http://lorempixel.com/400/200/animals/" alt=""><figcaption></figcaption></figure>
+		<figure><img src="http://lorempixel.com/400/200/city/" alt=""><figcaption></figcaption></figure>
+		<figure><img src="http://lorempixel.com/400/200/people/" alt=""><figcaption></figcaption></figure>
+	</div>  
+
+	<script>
+		$(function() {
+			$( "img", "#gallery" ).on( "contextmenu", function( e ) {
+				e.preventDefault();
+				$( "figcaption", "#gallery" ).text( "" );
+				$( this ).next().text( $( this ).attr( "src" ) );
+			});
+		});
+	</script>
+
+</body>
 </html>
